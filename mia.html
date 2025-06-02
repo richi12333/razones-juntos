@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Las 10 razones por las cuales deberíamos estar juntos</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #fff0f5, #800020);
+      color: #4B2C2C;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #800020;
+      font-size: 2.5em;
+    }
+
+    .nombres {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #A0522D;
+    }
+
+    ol {
+      font-size: 1.3em;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Las 10 razones por las cuales deberíamos estar juntos</h1>
+    <div class="nombres">MIA & RICARDO</div>
+    <ol>
+      <li>Me gustas.</li>
+      <li>Te gusto.</li>
+      <li>Eres la niña más dulce del mundo.</li>
+      <li>De loco te suelto.</li>
+      <li>Me inspiras a mejorar.</li>
+      <li>Tienes un hijo chihuahua y yo uno igual, podrían ser hermanos.</li>
+      <li>Conectamos sin esfuerzo, como si ya nos conociéramos de antes.</li>
+      <li>Nuestros hijos serán bonitos por ti.</li>
+      <li>Si no duramos toda la vida, será la historia de amor más grande que vamos a tener.</li>
+      <li>Solamente quiero que seamos novios.</li>
+    </ol>
+  </div>
+
+  <!-- Corazones flotantes -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
+
