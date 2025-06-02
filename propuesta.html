@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>La Propuesta</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Georgia', serif;
+      background-color: #fff8f8;
+      color: #4B2C2C;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      box-shadow: 0 0 30px rgba(128, 0, 32, 0.3);
+      border-radius: 20px;
+    }
+    p {
+      font-size: 1.3em;
+      text-indent: 3em;
+      margin-bottom: 2em;
+      text-align: justify;
+    }
+    h1 {
+      text-align: center;
+      color: #800020;
+      font-size: 2.8em;
+      margin-bottom: 1em;
+      font-weight: normal;
+    }
+    #btn-pregunta {
+      display: block;
+      margin: 30px auto 0 auto;
+      padding: 12px 30px;
+      background-color: #800020;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 200px;
+      text-align: center;
+    }
+    #btn-pregunta:hover {
+      background-color: #a00030;
+    }
+  </style>
+</head>
+<body>
+  <h1>La Propuesta</h1>
+  <p>
+    Eres la niña más dulce y noble que he conocido, tienes unos ojos que dejan deslumbrando al propio sol, tus manos son tan suaves como las nubes y apostaría que tus lágrimas son más pacíficas que las gotas de lluvia.
+  </p>
+  <p>
+    No nos conocemos del todo pero estoy cansado de decirle a todos que eres mi amiga, yo no quiero ser tu simple amigo, yo quiero ser la persona que pienses a diario y que tú seas la que piense a diario.
+  </p>
+  <p>
+    Quiero que seamos exclusivos, el uno para el otro y que comience una historia de amor como la de Ted y Tracy, como la de Lily y Marshal, que nos amemos y que la contemos miles de veces.
+  </p>
+
+  <button id="btn-pregunta">Pregunta importante</button>
+
+  <script>
+    document.getElementById('btn-pregunta').addEventListener('click', () => {
+      window.location.href = 'novios.html';
+    });
+  </script>
+</body>
+</html>

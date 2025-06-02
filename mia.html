@@ -86,6 +86,26 @@
         opacity: 0;
       }
     }
+
+    /* Botón siguiente */
+    #btn-siguiente {
+      display: block;
+      margin: 30px auto 0 auto;
+      padding: 12px 25px;
+      background-color: #800020;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+      width: 150px;
+    }
+
+    #btn-siguiente:hover {
+      background-color: #a00030;
+    }
   </style>
 </head>
 <body>
@@ -104,6 +124,8 @@
       <li>Si no duramos toda la vida, será la historia de amor más grande que vamos a tener.</li>
       <li>Solamente quiero que seamos novios.</li>
     </ol>
+
+    <button id="btn-siguiente">Siguiente</button>
   </div>
 
   <!-- Corazones flotantes -->
@@ -116,7 +138,11 @@
       heart.style.animationDuration = (5 + Math.random() * 5) + 's';
       document.body.appendChild(heart);
     }
+
+    // Redirigir al dar click en el botón
+    document.getElementById('btn-siguiente').addEventListener('click', () => {
+      window.location.href = 'propuesta.html';
+    });
   </script>
 </body>
 </html>
-

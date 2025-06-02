@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>¿Quieres ser mi novia?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Georgia', serif;
+      background-color: #fff8f8;
+      color: #4B2C2C;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 30px rgba(128, 0, 32, 0.3);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    h1 {
+      font-size: 3em;
+      color: #800020;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.7em;
+      text-align: center;
+      margin-bottom: 2em;
+      color: #800020;
+      font-weight: 600;
+    }
+    .btn-container {
+      display: flex;
+      gap: 30px;
+    }
+    button {
+      font-family: 'Georgia', serif;
+      font-size: 1.5em;
+      padding: 15px 40px;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: white;
+      user-select: none;
+      position: relative;
+    }
+    #btn-si {
+      background-color: #800020;
+    }
+    #btn-si:hover {
+      background-color: #a00030;
+    }
+    #btn-no {
+      background-color: #555;
+      position: absolute;
+    }
+    #btn-no:hover {
+      background-color: #333;
+    }
+
+    /* Corazones para animación */
+    .heart {
+      position: fixed;
+      width: 25px;
+      height: 25px;
+      background-color: pink;
+      transform: rotate(45deg);
+      pointer-events: none;
+      animation: floatUp 4s linear forwards;
+      z-index: 9999;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -12.5px;
+      left: 0;
+    }
+    .heart::after {
+      top: 0;
+      left: -12.5px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0) rotate(45deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-150vh) rotate(45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Podemos compartir este momento de nuestras vidas?</h1>
+  <p>¿Quieres ser mi novia?</p>
+
+  <div class="btn-container" style="position: relative; height: 80px; width: 300px;">
+    <button id="btn-si">Sí</button>
+    <button id="btn-no" style="top:0; left: 180px;">No</button>
+  </div>
+
+  <script>
+    const btnSi = document.getElementById('btn-si');
+    const btnNo = document.getElementById('btn-no');
+    const body = document.body;
+
+    // Función para crear corazones que flotan hacia arriba
+    function crearCorazon() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = window.innerHeight + 30 + 'px';
+      heart.style.animationDuration = 3 + Math.random() * 3 + 's';
+      body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    btnSi.addEventListener('click', () => {
+      // Crear muchos corazones por 5 segundos
+      const intervalo = setInterval(crearCorazon, 200);
+      setTimeout(() => clearInterval(intervalo), 5000);
+      // Opcional: cambiar fondo para resaltar
+      body.style.backgroundColor = '#ffe6f0';
+    });
+
+    btnNo.addEventListener('mouseenter', () => {
+      // Mover botón "No" a posición aleatoria dentro de la ventana
+      const btnWidth = btnNo.offsetWidth;
+      const btnHeight = btnNo.offsetHeight;
+      const maxX = window.innerWidth - btnWidth - 20;
+      const maxY = window.innerHeight - btnHeight - 20;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      btnNo.style.left = randomX + 'px';
+      btnNo.style.top = randomY + 'px';
+    });
+  </script>
+</body>
+</html>
